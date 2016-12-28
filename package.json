@@ -1,0 +1,20 @@
+{
+  "name": "react-native-calendar",
+  "version": "0.0.1",
+  "description": "Calendar component for ReactNative.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikches/react-native-calendar.git"
+  },
+  "keywords": [
+    "ReactNative",
+    "calendar"
+  ],
+  "author": "nikches",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikches/react-native-calendar/issues"
+  },
+  "homepage": "https://github.com/nikches/react-native-calendar#readme"
+}
