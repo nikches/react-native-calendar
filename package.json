@@ -1,5 +1,5 @@
 {
-  "name": "react-native-calendar",
+  "name": "@nikches/react-native-calendar",
   "version": "0.0.1",
   "description": "Calendar component for ReactNative.",
   "main": "index.js",
