@@ -8,6 +8,7 @@ import {
 } from "react-native";
 
 export default class Calendar extends PureComponent {
+
     static get defaultProps() {
         return {
             date: new Date(),
@@ -121,7 +122,9 @@ export default class Calendar extends PureComponent {
     }
 
     renderCalendarDay(index, dateNumber) {
-        const isWeekend = index === 5 || index === 6;
+        const weekDay = (index + this.props.weekFirstDay) % 7;
+        const isWeekend = weekDay === 0 || weekDay  === 6;
+
         const today = new Date();
         const isToday = this.props.date.getDate() === dateNumber &&
                         this.props.date.getMonth() === today.getMonth() &&
@@ -236,7 +239,7 @@ const styles = StyleSheet.create({
     },
 
     todayDayInner: {
-        borderColor: "grey",
+        borderColor: "#BF360C"
     },
 
     dayText: {
