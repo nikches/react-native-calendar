@@ -64,11 +64,6 @@ export default class Calendar extends PureComponent {
     renderBar() {
         const month = this.props.date.getMonth();
         const year = this.props.date.getFullYear();
-
-        if (month < 0 || month > 11) {
-            throw new Error("Invalid month!");
-        }
-
         const monthName = this.props.monthNames[month];
 
         return (
