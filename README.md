@@ -3,6 +3,11 @@ Calendar component for ReactNative. It is stateless component.
 
 ![example](calendar.png)
 
+## install 
+```
+npm install --save react-native-calendar-component
+```
+
 ## props
 |  prop              | type     | default value                |
 |--------------------|----------|------------------------------|
