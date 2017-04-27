@@ -135,7 +135,7 @@ export default class Calendar extends PureComponent {
                 <TouchableOpacity onPress={() => this.handleDayPress(dateNumber)}>
                     <View style={[styles.dayInner, isToday ? styles.todayDayInner : {}]}>
                         <Text style={[styles.dayText, isWeekend ? styles.dayWeekendText : {}]}>
-                            {dateNumber}
+                            {`${dateNumber}`}
                         </Text>
                     </View>
                 </TouchableOpacity>
