@@ -124,11 +124,7 @@ export default class Calendar extends PureComponent {
     renderCalendarDay(index, dateNumber) {
         const weekDay = (index + this.props.weekFirstDay) % 7;
         const isWeekend = weekDay === 0 || weekDay  === 6;
-
-        const today = new Date();
-        const isToday = this.props.date.getDate() === dateNumber &&
-                        this.props.date.getMonth() === today.getMonth() &&
-                        this.props.date.getFullYear() === today.getFullYear();
+        const isToday = this.props.date.getDate() === dateNumber
 
         return (
             <View key={dateNumber} style={styles.dayOuter}>
