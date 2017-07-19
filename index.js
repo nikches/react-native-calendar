@@ -126,16 +126,18 @@ export default class Calendar extends PureComponent {
         const isWeekend = weekDay === 0 || weekDay  === 6;
 
         const today = new Date();
-        const isToday = this.props.date.getDate() === dateNumber &&
+        /*const isToday = this.props.date.getDate() === dateNumber &&
                         this.props.date.getMonth() === today.getMonth() &&
-                        this.props.date.getFullYear() === today.getFullYear();
+                        this.props.date.getFullYear() === today.getFullYear();*/
+
+        const isToday = this.props.date.getDate() === dateNumber
 
         return (
             <View key={dateNumber} style={styles.dayOuter}>
                 <TouchableOpacity onPress={() => this.handleDayPress(dateNumber)}>
                     <View style={[styles.dayInner, isToday ? styles.todayDayInner : {}]}>
                         <Text style={[styles.dayText, isWeekend ? styles.dayWeekendText : {}]}>
-                            {dateNumber}
+                            {`${dateNumber}`}
                         </Text>
                     </View>
                 </TouchableOpacity>
