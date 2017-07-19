@@ -16,6 +16,7 @@ export default class Calendar extends PureComponent {
             onPrevButtonPress: null,
             onNextButtonPress: null,
             weekFirstDay: 0,
+            isSelected: true,
             dayNames: [
                 "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat",
             ],
@@ -42,12 +43,14 @@ export default class Calendar extends PureComponent {
 
     handleNextButtonPress() {
         if (this.props.onNextButtonPress !== null) {
+            this.props.isSelected = false
             this.props.onNextButtonPress();
         }
     }
 
     handlePrevButtonPress() {
         if (this.props.onPrevButtonPress !== null) {
+            this.props.isSelected = false
             this.props.onPrevButtonPress();
         }
     }
@@ -57,7 +60,7 @@ export default class Calendar extends PureComponent {
             const month = this.props.date.getMonth();
             const year  = this.props.date.getFullYear();
             const selectedDate = new Date(year, month, dateNumber);
-
+            this.props.isSelected = true
             this.props.onDateSelect(selectedDate);
         }
     }
@@ -135,7 +138,7 @@ export default class Calendar extends PureComponent {
         return (
             <View key={dateNumber} style={styles.dayOuter}>
                 <TouchableOpacity onPress={() => this.handleDayPress(dateNumber)}>
-                    <View style={[styles.dayInner, isToday ? styles.todayDayInner : {}]}>
+                    <View style={[styles.dayInner, (isToday && this.props.isSelected) ? styles.todayDayInner : {}]}>
                         <Text style={[styles.dayText, isWeekend ? styles.dayWeekendText : {}]}>
                             {`${dateNumber}`}
                         </Text>
