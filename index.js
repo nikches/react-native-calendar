@@ -14,6 +14,8 @@ export default class Calendar extends PureComponent {
     static get defaultProps() {
         return {
             date: new Date(),
+            todayDayInnerStyle: styles.todayDayInner,
+            dayWeekendTextStyle: styles.dayWeekendText,
             onDateSelect: null,
             onPrevButtonPress: null,
             onNextButtonPress: null,
@@ -33,6 +35,8 @@ export default class Calendar extends PureComponent {
     static get propTypes() {
         return {
             date: React.PropTypes.object,
+            todayDayInnerStyle: React.PropTypes.object,
+            dayWeekendTextStyle: React.PropTypes.object,
             onDateSelect: React.PropTypes.func,
             onPrevButtonPress: React.PropTypes.func,
             onNextButtonPress: React.PropTypes.func,
@@ -136,8 +140,8 @@ export default class Calendar extends PureComponent {
         return (
             <View key={dateNumber} style={styles.dayOuter}>
                 <TouchableOpacity onPress={() => this.handleDayPress(dateNumber)}>
-                    <View style={[styles.dayInner, (isToday && this.isSelected) ? styles.todayDayInner : {}]}>
-                        <Text style={[styles.dayText, isWeekend ? styles.dayWeekendText : {}]}>
+                    <View style={[styles.dayInner, (isToday && this.isSelected) ? this.props.todayDayInnerStyle : {}]}>
+                        <Text style={[styles.dayText, isWeekend ? this.props.dayWeekendTextStyle : {}]}>
                             {`${dateNumber}`}
                         </Text>
                     </View>
