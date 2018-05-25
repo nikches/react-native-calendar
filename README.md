@@ -1,11 +1,15 @@
 # react-native-calendar
+
+This is basically an update to Nikches' React Native Calendar Component. The reason for the update is to solve the errors due to the deprecation of React.PropTypes.
+Basic usage is generally/exactly the same
+
 Calendar component for ReactNative. It is stateless component.
 
 ![example](calendar.png)
 
 ## install 
 ```
-npm install --save react-native-calendar-component
+npm install --save react-native-calendar-updated
 ```
 
 ## props
@@ -23,7 +27,7 @@ npm install --save react-native-calendar-component
 
 ```javascript
 import React, { Component } from "react";
-import Calendar   from "react-native-calendar-component";
+import Calendar from "react-native-calendar-updated";
 
 export default class CalendarTest extends Component {
     constructor(props) {
