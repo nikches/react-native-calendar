@@ -1,7 +1,7 @@
 # react-native-calendar
 
-This is basically an update to Nikches' React Native Calendar Component. The reason for the update is to solve the errors due to the deprecation of React.PropTypes.
-Basic usage is generally/exactly the same
+This is a minor update.
+The new feature this release adds is simply so that the calendar component can also receive a `style` props in order to customize the default styling.
 
 Calendar component for ReactNative. It is stateless component.
 
@@ -28,6 +28,7 @@ npm install --save react-native-calendar-updated
 ```javascript
 import React, { Component } from "react";
 import Calendar from "react-native-calendar-updated";
+import { StyleSheet } from "react-native";
 
 export default class CalendarTest extends Component {
     constructor(props) {
@@ -64,8 +65,15 @@ export default class CalendarTest extends Component {
                 date={this.state.date}
                 onPrevButtonPress={() => this.handlePrevButtonPress()}
                 onNextButtonPress={() => this.handleNextButtonPress()}
-                onDateSelect={(date) => this.handleDateSelect(date)} />
+                onDateSelect={(date) => this.handleDateSelect(date)}
+                style={{styles.customStyling}} />
         );
     }
 }
+
+const styles = StyleSheet.create({
+    customStyling: {
+        borderBottomWidth: 0
+    }
+})
 ```
