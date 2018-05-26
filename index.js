@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import PropTypes from 'prop-types';
 
 import {
     StyleSheet,
@@ -30,13 +31,13 @@ export default class Calendar extends PureComponent {
 
     static get propTypes() {
         return {
-            date: React.PropTypes.object,
-            onDateSelect: React.PropTypes.func,
-            onPrevButtonPress: React.PropTypes.func,
-            onNextButtonPress: React.PropTypes.func,
-            dayNames: React.PropTypes.array,
-            monthNames: React.PropTypes.array,
-            weekFirstDay: React.PropTypes.number,
+            date: PropTypes.object,
+            onDateSelect: PropTypes.func,
+            onPrevButtonPress: PropTypes.func,
+            onNextButtonPress: PropTypes.func,
+            dayNames: PropTypes.array,
+            monthNames: PropTypes.array,
+            weekFirstDay: PropTypes.number,
         };
     }
 
@@ -200,7 +201,7 @@ export default class Calendar extends PureComponent {
         }
 
         return (
-            <View style={[styles.calendar]}>
+            <View style={[styles.calendar, this.props.style]}>
                 {this.renderBar()}
                 {this.renderDayNames()}
                 {weeks}
