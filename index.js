@@ -201,7 +201,7 @@ export default class Calendar extends PureComponent {
         }
 
         return (
-            <View style={[styles.calendar]}>
+            <View style={[styles.calendar, this.props.style]}>
                 {this.renderBar()}
                 {this.renderDayNames()}
                 {weeks}
